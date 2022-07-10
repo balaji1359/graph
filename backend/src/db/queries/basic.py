@@ -1,6 +1,6 @@
 from neo4j import GraphDatabase
 
-uri = "neo4j://localhost:7687"
+uri = "neo4j://3.19.26.1:7687"
 driver = GraphDatabase.driver(uri, auth=("neo4j", "Balu@2481358"))
 
 def get_friends_of(tx, name):
