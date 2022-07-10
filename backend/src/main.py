@@ -1,5 +1,6 @@
 from typing import Union
 from db.queries.basic import get_basic
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 
 app = FastAPI()
