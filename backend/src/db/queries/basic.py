@@ -19,4 +19,4 @@ RETURN {nodes: nl, links: rl}""")
 def get_basic():
     with driver.session() as session:
         result = session.read_transaction(get_friends_of, "Alice")
-    return result
+    return result[0]['{nodes: nl, links: rl}']
