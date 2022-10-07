@@ -8,9 +8,7 @@ def get_friends_of(tx, name):
     result = tx.run("""match p=(a:Person)-[]->(b:Person)
                         unwind nodes(p) as n unwind relationships(p) as r
                         with collect( distinct {id: ID( n),
-                        label:labels(n), name: n.FirstNname,
-                        gender:n.Gender, title:n.title,
-                        url:n.img_url}) as nl,
+                        label:labels(n), name: n.name}) as nl,
                         collect( distinct {source: ID(startnode(r)), target: ID(endnode(r))}) as rl
                         RETURN {nodes: nl, links: rl}""")
     # result = tx.run(""" MATCH (tom {name: "Tom Hanks"}) RETURN tom""")
